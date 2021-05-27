@@ -7,7 +7,7 @@ async function main({ tokenRecipient, timeLockAdmin, guardian }) {
     await hre.run('compile');
 
     // This gets the contract from 
-    const Token = await hre.ethers.getContractFactory("Comp");
+    const Token = await hre.ethers.getContractFactory("UnlockDiscountToken");
     const token = await Token.deploy(tokenRecipient);
     await token.deployed();
     await token.deployTransaction.wait();
